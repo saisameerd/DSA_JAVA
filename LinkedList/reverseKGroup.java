@@ -13,7 +13,11 @@ public class reverseKGroup {
 
       public void addLast(int val){
           Node temp = new Node();
+
+
           temp.data = val;
+
+          
           temp.next = null;
 
           if(size == 0){
