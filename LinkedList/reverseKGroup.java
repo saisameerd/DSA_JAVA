@@ -27,8 +27,8 @@ public class reverseKGroup {
       }
       public void addFirst(int val) {
         Node temp = new Node();
-        temp.data = val;
-        temp.next = head;
+        temp.data =  val   ;
+        temp.next = head  ;
         head = temp;
   
         if (size == 0) {
