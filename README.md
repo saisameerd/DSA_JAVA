@@ -10,7 +10,7 @@ Started with ---
 
 3) Arrays
 
-4) Trees - Binary Tree
+4) Trees - Binary Tree , Binary Search Tree
 
 
 
