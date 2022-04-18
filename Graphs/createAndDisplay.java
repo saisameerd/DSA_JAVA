@@ -21,6 +21,21 @@ public class createAndDisplay {
        graph[v].add(new Edge(u, v, w));
     }
 
+    public static void display(ArrayList<Edge>[] graph , int n){
+        for(int  i = 0 ; i< n ;i++){
+            System.out.print(i + " --> ");
+            for(Edge e : graph[i]){
+                int u = e.src;
+                int v = e.nbr;
+                int w = e.wt;
+
+                System.out.print( u + " - " + v + " @ " + w + " , ");
+            }
+
+            System.out.println();
+        }
+    }
+
     public static void construction(){
         int N = 7;
 
@@ -41,7 +56,19 @@ public class createAndDisplay {
         addEdge(graph, 5 , 6, 3);
         addEdge(graph, 4 , 6, 8);
 
-        
+        display(graph , N);
+
+/* 
+0 --> 0 - 1 @ 10 , 0 - 3 @ 10 , 
+1 --> 0 - 1 @ 10 , 1 - 2 @ 10 , 
+2 --> 1 - 2 @ 10 , 2 - 3 @ 40 , 
+3 --> 0 - 3 @ 10 , 2 - 3 @ 40 , 3 - 4 @ 2 , 
+4 --> 3 - 4 @ 2 , 4 - 5 @ 2 , 4 - 6 @ 8 , 
+5 --> 4 - 5 @ 2 , 5 - 6 @ 3 , 
+6 --> 5 - 6 @ 3 , 4 - 6 @ 8 , 
+
+[Done] exited with code=0 in 0.966 seconds
+*/
     }
 
     public static void main(String[] args) {
