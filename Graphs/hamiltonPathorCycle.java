@@ -26,8 +26,10 @@ public class hamiltonPathorCycle {
 
         for(Edge e: graph[src]){
             int nbr = e.nbr;
+            if(!vis[src]){
+                pathOrCycle(graph, vis, nbr, osrc, asf + nbr);
 
-            pathOrCycle(graph, vis, nbr, osrc, asf + nbr);
+            }
         }
 
         vis[src] = false ;
