@@ -3,17 +3,16 @@ public class LC102_LVLorder {
         public List<List<Integer>> levelOrder(TreeNode root) {
             Queue<TreeNode>qu = new LinkedList<>();
             List<List<Integer>>ans = new ArrayList<>();
+            List<Integer>lvl = new ArrayList<>();
             
             if(root == null)return ans;
             
             qu.add(root);
+            qu.add(null);
             
             while(!qu.isEmpty()){
-              int size = qu.size();
-              List<Integer>lvl = new ArrayList<>();
-                
-             for(int i=0;i<size;i++){
-                 TreeNode rem = qu.remove();   
+                 TreeNode rem = qu.remove(); 
+                 
                 if(rem != null){            
                     lvl.add(rem.val);
                     if(rem.left != null){
@@ -22,10 +21,11 @@ public class LC102_LVLorder {
                      if(rem.right != null){
                         qu.add(rem.right);
                     }
+                }else{
+                    ans.add(lvl);
+                   if(qu.size()>0) qu.add(null);
+                    lvl = new ArrayList<>();
                 }
-             }
-                ans.add(new ArrayList<>(lvl));
-             
             }
             
             return ans;
