@@ -1,5 +1,5 @@
 
-import java.util.*;
+import java.util.HashMap;
 public class highFreqChar {
     public static void main(String[] args) throws Exception {
         // writeyourcodehere
